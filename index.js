@@ -1,13 +1,3 @@
-var crsr =  document.querySelector("#cursor")
-var crsrBlur =  document.querySelector("#cursor-blur")
-document.addEventListener("mousemove",function(dets){
-    crsr.style.left = dets.x+"px"
-    crsr.style.top = dets.y+"px"
-    crsrBlur.style.left = dets.x-170+"px"
-    crsrBlur.style.top = dets.y-170+"px"
-})
-
-
 gsap.to('#nav',{
     backgroundColor: "#000",
     height: "100px",
@@ -33,22 +23,6 @@ gsap.to("#main", {
         scrub:2
     }
 })
-
-
-var allh4 = document.querySelectorAll("#nav h4");
-allh4.forEach(function(elem){
-    elem.addEventListener("mouseenter",function(){
-        crsr.style.scale = 3
-        crsr.style.border = "1px solid #fff"
-        crsr.style.backgroundColor = "transparent"
-    })
-    elem.addEventListener("mouseleave",function(){
-        crsr.style.scale = 1
-        crsr.style.border = "0px solid #95C11E"
-        crsr.style.backgroundColor = "#95C11E"
-    })
-})
-
 
 gsap.from("about-us img, #about-us-in",{
     y:50,
